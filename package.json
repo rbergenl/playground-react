@@ -4,8 +4,10 @@
   "description": "Progressive Web App using Firebase",
   "main": "index.js",
   "scripts": {
+    "postinstall": "npm run createfirebaseconf",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --mode development --host $IP --public $C9_HOSTNAME --hot",
+    "start-c9": "webpack-dev-server --mode development --host $IP --public $C9_HOSTNAME --hot",
+    "start": "webpack-dev-server --mode development",
     "createfirebaseconf": "firebase setup:web --json > ./src/config/firebase-config.json",
     "build": "webpack --mode production",
     "deploy": "firebase deploy --only hosting"
@@ -25,7 +27,6 @@
     "copy-webpack-plugin": "^4.5.1",
     "css-loader": "^0.28.11",
     "extract-loader": "^1.0.2",
-    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^1.1.11",
     "html-webpack-harddisk-plugin": "^0.2.0",
     "html-webpack-plugin": "^3.0.6",
@@ -42,15 +43,15 @@
     "typescript": "^2.7.2",
     "webapp-webpack-plugin": "^1.2.0",
     "webpack": "^4.1.1",
-    "webpack-cli": "^2.0.10",
     "webpack-dev-server": "^3.1.0",
     "webpack-manifest-plugin": "^2.0.0-rc.2",
     "workbox-webpack-plugin": "^3.0.0"
   },
   "dependencies": {
-    "@webcomponents/webcomponentsjs": "github:webcomponents/webcomponentsjs",
+    "@webcomponents/webcomponentsjs": "latest",
     "firebase": "^4.11.0",
     "firebaseui": "^2.6.3",
-    "react-router-dom": "^4.2.2"
+    "react-router-dom": "^4.2.2",
+    "webpack-cli": "^3.1.1"
   }
 }

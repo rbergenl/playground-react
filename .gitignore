@@ -62,3 +62,4 @@ typings/
 
 # custom
 firebase-config.json
+.wwp-cache/

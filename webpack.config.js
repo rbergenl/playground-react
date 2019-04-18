@@ -1,15 +1,17 @@
 const	path = require('path'),
 		autoprefixer = require('autoprefixer');
 
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+//const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const WebappWebpackPlugin = require('webapp-webpack-plugin');
 var JsonPostProcessPlugin = require('json-post-process-webpack-plugin')
 
-const extractSass = new ExtractTextPlugin({
-    filename: "[name].[contenthash].css"
-    //disable: process.env.NODE_ENV === "development"
-});
+//const extractSass = new ExtractTextPlugin({
+//     filename: "[name].[contenthash].css"
+//     //disable: process.env.NODE_ENV === "development"
+// });
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -41,20 +43,31 @@ module.exports = {
 			// CSS
 		    {
 		    	test: /\.scss$/,
-	            //loaders: ["file-loader?name=main.css", "extract-loader?publicPath=null", 'css-loader', 'resolve-url-loader', 'sass-loader?sourceMap']
-	            use: extractSass.extract({
-	                use: [{
-	                    loader: "css-loader"
-	                }, {
-	                    loader: "resolve-url-loader"
-	                }, {
-	                    loader: "sass-loader"
-	                }],
-	                // use style-loader in development
-	                fallback: "style-loader"
-	            })
-            },
-        
+          //loaders: ["file-loader?name=main.css", "extract-loader?publicPath=null", 'css-loader', 'resolve-url-loader', 'sass-loader?sourceMap']
+          // use: extractSass.extract({
+          //     use: [{
+          //         loader: "css-loader"
+          //     }, {
+          //         loader: "resolve-url-loader"
+          //     }, {
+          //         loader: "sass-loader"
+          //     }],
+          //     // use style-loader in development
+          //     fallback: "style-loader"
+          // })
+					use: [
+	          {
+	            loader: MiniCssExtractPlugin.loader,
+	            options: {
+	              // you can specify a publicPath here
+	              // by default it uses publicPath in webpackOptions.output
+	              hmr: process.env.NODE_ENV === 'development',
+	            },
+	          },
+	          'css-loader',
+	        ],
+        },
+
 			{
 				test: /\.ts(x?)$/,
 				exclude: /node_modules/,
@@ -98,7 +111,13 @@ module.exports = {
 	      swSrc: './src/service-worker.js',
 	      swDest: '../service-worker.js',
 	    }),
-		extractSass,
+		//extractSass,
+		new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+    }),
 		new WebappWebpackPlugin({
 			logo: path.join(__dirname, 'src/assets/icon/icon.png'), // svg works too!
 			prefix: '../assets/[hash]/',

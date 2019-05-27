@@ -1,32 +1,3 @@
-# Used Resources
-- Project structure:
-  - https://github.com/fongandrew/firebase-tsx-boilerplate/
-  - https://github.com/firebase/firebaseui-web-react/tree/master/example
-  - https://github.com/ionic-team/ionic-pwa-toolkit
-  - https://github.com/facebook/create-react-app/tree/master/packages/react-scripts/template
-- Typescript:
-  - https://www.typescriptlang.org/docs/handbook/declaration-files/templates/module-function-d-ts.html
-- React Router
-  - https://reacttraining.com/react-router/core/guides/philosophy
-- Firebase Auth
-  - https://github.com/firebase/firebaseui-web-react
-  - https://github.com/firebase/firebaseui-web/blob/master/README.md
-- Push / Database
-  - https://developers.google.com/web/ilt/pwa/lab-integrating-web-push
-  - https://firebase.google.com/docs/cloud-messaging/js/first-message
-  - https://css-tricks.com/implementing-push-notifications-back-end/
-- Web Components
-  - https://github.com/shawnbot/custom-elements
-- Google Payments
-  - https://developers.google.com/web/fundamentals/payments/deep-dive-into-payment-request
-  - https://developers.google.com/web/fundamentals/codelabs/payment-request-api/
-- Redux (Store)
-  - https://github.com/prescottprue/react-redux-firebase
-- Firebase Storage (image upload)
-- Device API's
-  - https://developers.google.com/web/fundamentals/
-  - https://developers.google.com/web/funredamentals/media/recording-audio/
-
 # Prerequisites
 - Have a Google account
 - Have a Github account and a repository created
@@ -223,7 +194,7 @@ npm install --save-dev style-loader css-loader postcss-loader sass-loader
 npm i -D extract-text-webpack-plugin@next
 
 # Redux to store state (e.g. login)
-- 
+-
 
 
 # Turn it into a Progressive Web App
@@ -321,10 +292,9 @@ curl -X POST -H "Authorization: key=YOUR_SERVER_KEY" -H "Content-Type: applicati
       // Special config path based on environment
       config$: path.join(__dirname, 'src/config', NODE_ENV)
     } },` to `webpack.config.js`.
-    
-    
+
+
 # Development Quality
 ## Unit Testing
 
 ## E2E Cross-Device/Browser Testing
-

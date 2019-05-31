@@ -1,9 +1,18 @@
 # Resources React
 
-- https://github.com/sudheerj/reactjs-interview-questions
-
-## Pluralsight Codebases
+## Pluralsight Codebases / Boilerplates
 - https://github.com/jscomplete/advanced-react
+- https://github.com/react-boilerplate/react-boilerplate
+- https://github.com/asulaiman/test-react
+- https://github.com/gothinkster/react-redux-realworld-example-app
+
+## Code Styleguides
+- https://reactpatterns.com/
+
+## General
+- https://www.yacht.nl/nieuws-blogs/introduction-to-react
+- https://github.com/sudheerj/reactjs-interview-questions
+- https://medium.com/@baphemot/a-react-job-interview-recruiter-perspective-f1096f54dd16
 
 ## Redux (Store)
 - https://github.com/prescottprue/react-redux-firebase
@@ -25,6 +34,7 @@
 ## GraphQL
 - Data: https://www.graphqlhub.com/
 - Schema: https://github.com/clayallsopp/graphqlhub/blob/master/graphqlhub-schemas/src/twitter.js
+- https://codeburst.io/learning-graphql-with-firebase-part-1-6cb0ae1499a4
 
 ## Testing
 - https://github.com/chrisminnick/tdd-using-react-demos
@@ -57,3 +67,6 @@ https://docs.expo.io/versions/latest/expokit/expokit.html
 
 ## Database
 - https://firebase.googleblog.com/2016/01/the-beginners-guide-to-react-native-and_84.html
+
+## Libraries
+- https://github.com/paralleldrive/react-feature-toggles

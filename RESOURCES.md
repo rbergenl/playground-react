@@ -70,3 +70,20 @@ https://docs.expo.io/versions/latest/expokit/expokit.html
 
 ## Libraries
 - https://github.com/paralleldrive/react-feature-toggles
+
+## Jest / Enzyme
+- Jest snapshot testing
+- Enzyme (from Airbnb) for shallow rendering
+- Make a __Mocks__ folder
+
+# Flow
+https://flow.org/en/docs/react/
+
+# Theme
+- Check react-toolbox
+
+# Debugging
+- react debug comp $r.props
+
+# Performance
+- Add querystring ?react_perf and install/enable react-addons-perf
